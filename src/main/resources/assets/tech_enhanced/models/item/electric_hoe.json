@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tech_enhanced:item/armor/nano_boots"
+    "layer0": "tech_enhanced:item/tool/electric_hoe"
   }
 }
