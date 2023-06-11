@@ -18,8 +18,8 @@ import reborncore.common.util.ItemUtils;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class TEElectricHoeItem extends HoeItem implements RcEnergyItem {
-    public TEElectricHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+public class ElectricHoeItem extends HoeItem implements RcEnergyItem {
+    public ElectricHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "tech_enhanced:item/tool/electric_wrench"
+    "layer0": "techreborn:item/tool/electric_wrench"
   }
 }

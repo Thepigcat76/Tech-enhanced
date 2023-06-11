@@ -1,9 +1,9 @@
 package com.thepigcat76;
 
+import com.thepigcat76.blocks.TEBlocks;
 import com.thepigcat76.items.TEItemGroup;
 import com.thepigcat76.items.TEItems;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,5 +15,6 @@ public class TechEnhanced implements ModInitializer {
 	public void onInitialize() {
 		TEItems.registerModItems();
 		TEItemGroup.registerItemGroups();
+		TEBlocks.registerModBlocks();
 	}
 }
