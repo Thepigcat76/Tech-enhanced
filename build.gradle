@@ -62,8 +62,8 @@ dependencies {
 
 	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:9.1.546"
 
-	modImplementation "RebornCore:RebornCore-1.20:5.8.0"
-	modImplementation "TechReborn:TechReborn-1.20:5.8.0"
+	modImplementation "RebornCore:RebornCore-1.20:5.8.1"
+	modImplementation "TechReborn:TechReborn-1.20:5.8.1"
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
