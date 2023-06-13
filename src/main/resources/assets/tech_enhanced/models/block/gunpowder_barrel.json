@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tech_enhanced:block/gunpowder_barrel_bottom",
+    "side": "tech_enhanced:block/gunpowder_barrel_side"
+  }
+}

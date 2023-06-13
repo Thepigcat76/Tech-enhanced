@@ -22,7 +22,7 @@ public class TEItemGroup {
                         entries.add(TEItems.NANO_CHESTPLATE);
                         entries.add(TEItems.NANO_LEGGINGS);
                         entries.add(TEItems.NANO_BOOTS);
-                        entries.add(TEBlocks.GUNPOWDER_BARREL);
+                        //entries.add(TEBlocks.GUNPOWDER_BARREL);
 
                     }).build());
 

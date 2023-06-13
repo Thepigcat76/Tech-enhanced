@@ -14,8 +14,8 @@ import techreborn.init.TRContent;
 
 public class TEBlocks extends TRContent {
 
-    public static final Block GUNPOWDER_BARREL = registerBlock("gunpowder_barrel",
-            new GunpowderBarrelBlock(FabricBlockSettings.copyOf(Blocks.BARREL).strength(2.5f).requiresTool()));
+    //public static final Block GUNPOWDER_BARREL = registerBlock("gunpowder_barrel",
+    //        new GunpowderBarrelBlock(FabricBlockSettings.copyOf(Blocks.BARREL).strength(2.5f).requiresTool()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
