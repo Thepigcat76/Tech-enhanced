@@ -1,16 +1,25 @@
 package com.thepigcat76.items.tools;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import reborncore.api.IToolHandler;
 import reborncore.common.powerSystem.RcEnergyItem;
 import reborncore.common.powerSystem.RcEnergyTier;
 import reborncore.common.util.ItemUtils;
+import techreborn.TechReborn;
 import techreborn.items.tool.WrenchItem;
 
-public class ElectricWrenchItem extends WrenchItem implements RcEnergyItem {
+import java.util.Set;
+
+public class ElectricWrenchItem extends Item implements IToolHandler, RcEnergyItem {
+
+    public ElectricWrenchItem(Settings settings) {
+        super(settings);
+    }
 
     public boolean isDamageable() {
         return false;

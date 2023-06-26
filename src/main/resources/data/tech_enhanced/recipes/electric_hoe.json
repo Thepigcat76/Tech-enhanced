@@ -5,7 +5,7 @@
   ],
   "key": {
     "T": {
-      "tag": "minecraft:hoes"
+      "tag": "c:hoes"
     },
     "B": {
       "item": "techreborn:red_cell_battery"

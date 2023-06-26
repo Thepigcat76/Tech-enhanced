@@ -1,5 +1,6 @@
 package com.thepigcat76.init;
 
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -39,12 +40,14 @@ public enum TEArmorMaterials implements ArmorMaterial {
         this(maxDamageFactor, damageReductionAmountArray, enchantability, soundEvent, toughness, 0.0F, repairMaterialIn);
     }
 
-    public int getDurability(ArmorItem.Type type) {
-        return MAX_DAMAGE_ARRAY[type.getEquipmentSlot().getEntitySlotId()] * this.maxDamageFactor;
+    @Override
+    public int getDurability(EquipmentSlot slotIn) {
+        return MAX_DAMAGE_ARRAY[slotIn.getEntitySlotId()] * maxDamageFactor;
     }
 
-    public int getProtection(ArmorItem.Type type) {
-        return this.damageReductionAmountArray[type.getEquipmentSlot().getEntitySlotId()];
+    @Override
+    public int getProtectionAmount(EquipmentSlot slotIn) {
+        return damageReductionAmountArray[slotIn.getEntitySlotId()];
     }
 
     public int getEnchantability() {
