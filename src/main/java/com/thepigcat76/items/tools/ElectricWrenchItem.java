@@ -2,7 +2,9 @@ package com.thepigcat76.items.tools;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -10,10 +12,7 @@ import reborncore.api.IToolHandler;
 import reborncore.common.powerSystem.RcEnergyItem;
 import reborncore.common.powerSystem.RcEnergyTier;
 import reborncore.common.util.ItemUtils;
-import techreborn.TechReborn;
-import techreborn.items.tool.WrenchItem;
-
-import java.util.Set;
+import techreborn.utils.InitUtils;
 
 public class ElectricWrenchItem extends Item implements IToolHandler, RcEnergyItem {
 
@@ -58,10 +57,18 @@ public class ElectricWrenchItem extends Item implements IToolHandler, RcEnergyIt
     @Override
     public boolean handleTool(ItemStack stack, BlockPos pos, World world, PlayerEntity player, Direction side, boolean damage) {
         if (!player.getWorld().isClient && this.getStoredEnergy(stack) > 50.0) {
-            this.tryUseEnergy(stack, (long) 5);
+            this.tryUseEnergy(stack, 5);
             return true;
         } else {
             return false;
         }
+    }
+
+    @Override
+    public void appendStacks(ItemGroup group, DefaultedList<ItemStack> itemList) {
+        if (!isIn(group)) {
+            return;
+        }
+        InitUtils.initPoweredItems(this, itemList);
     }
 }

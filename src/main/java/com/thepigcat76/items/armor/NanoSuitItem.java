@@ -17,7 +17,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.world.World;
 import reborncore.api.items.ArmorBlockEntityTicker;
 import reborncore.common.powerSystem.RcEnergyItem;
 import reborncore.common.powerSystem.RcEnergyTier;
@@ -49,10 +48,9 @@ public class NanoSuitItem extends TRArmourItem implements ArmorBlockEntityTicker
 
     @Override
     public void tickArmor(ItemStack stack, PlayerEntity playerEntity) {
-        World world = playerEntity.getWorld();
         if (Objects.requireNonNull(this.slot) == EquipmentSlot.HEAD) {
-            if ((world.isNight() || world.getLightLevel(playerEntity.getBlockPos()) <= 4) && tryUseEnergy(stack, nightVisionCost)) {
-                playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 120, 1));
+            if (tryUseEnergy(stack, nightVisionCost)) {
+                playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 120, 1, false, false));
             } else {
                 playerEntity.removeStatusEffect(StatusEffects.NIGHT_VISION);
             }

@@ -2,18 +2,17 @@ package com.thepigcat76.items.tools;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import reborncore.common.powerSystem.RcEnergyItem;
 import reborncore.common.powerSystem.RcEnergyTier;
 import reborncore.common.util.ItemUtils;
+import techreborn.utils.InitUtils;
 
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -60,12 +59,12 @@ public class ElectricHoeItem extends HoeItem implements RcEnergyItem {
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
-        Pair<Predicate<ItemUsageContext>, Consumer<ItemUsageContext>> pair = (Pair)TILLING_ACTIONS.get(world.getBlockState(blockPos).getBlock());
+        Pair<Predicate<ItemUsageContext>, Consumer<ItemUsageContext>> pair = TILLING_ACTIONS.get(world.getBlockState(blockPos).getBlock());
         if (pair == null|| this.getStoredEnergy(context.getStack()) <= 50.0) {
             return ActionResult.PASS;
         } else {
-            Predicate<ItemUsageContext> predicate = (Predicate)pair.getFirst();
-            Consumer<ItemUsageContext> consumer = (Consumer)pair.getSecond();
+            Predicate<ItemUsageContext> predicate = pair.getFirst();
+            Consumer<ItemUsageContext> consumer = pair.getSecond();
             if (predicate.test(context)) {
                 PlayerEntity playerEntity = context.getPlayer();
                 world.playSound(playerEntity, blockPos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
@@ -81,5 +80,13 @@ public class ElectricHoeItem extends HoeItem implements RcEnergyItem {
                 return ActionResult.PASS;
             }
         }
+    }
+
+    @Override
+    public void appendStacks(ItemGroup group, DefaultedList<ItemStack> itemList) {
+        if (!isIn(group)) {
+            return;
+        }
+        InitUtils.initPoweredItems(this, itemList);
     }
 }

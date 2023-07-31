@@ -17,21 +17,8 @@
 	"entrypoints": {
 		"main": [
           "com.thepigcat76.TechEnhanced"
-		],
-		"client": [
-			"com.thepigcat76.ExampleModClient"
-		],
-		"fabric-datagen": [
-			"com.thepigcat76.TechEnhancedDataGenerator"
 		]
 	},
-	"mixins": [
-		"tech_enhanced.mixins.json",
-		{
-			"config": "tech_enhanced.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
 		"minecraft": "~1.19.2",
