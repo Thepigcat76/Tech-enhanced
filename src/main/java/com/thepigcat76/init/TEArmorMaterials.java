@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.function.Supplier;
 
 public enum TEArmorMaterials implements ArmorMaterial {
-    NANO(75, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0.0F, () -> Ingredient.EMPTY);
+    QUARK(75, new int[]{3, 6, 8, 3}, 10, SoundEvents.BLOCK_BEACON_ACTIVATE, 0.0F, () -> Ingredient.EMPTY);
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
     private final int maxDamageFactor;

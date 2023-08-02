@@ -18,10 +18,6 @@ public class TEItemGroup {
                     .icon(() -> new ItemStack(TEItems.ELECTRIC_WRENCH)).entries((displayContext, entries) -> {
                         entries.add(TEItems.ELECTRIC_HOE);
                         entries.add(TEItems.ELECTRIC_WRENCH);
-                        entries.add(TEItems.NANO_HELMET);
-                        entries.add(TEItems.NANO_CHESTPLATE);
-                        entries.add(TEItems.NANO_LEGGINGS);
-                        entries.add(TEItems.NANO_BOOTS);
                         //entries.add(TEBlocks.GUNPOWDER_BARREL);
 
                     }).build());
@@ -34,10 +30,6 @@ public class TEItemGroup {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
-            entries.add(TEItems.NANO_HELMET);
-            entries.add(TEItems.NANO_CHESTPLATE);
-            entries.add(TEItems.NANO_LEGGINGS);
-            entries.add(TEItems.NANO_BOOTS);
         });
     }
 

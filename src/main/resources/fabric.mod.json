@@ -19,7 +19,7 @@
           "com.thepigcat76.TechEnhanced"
 		],
 		"client": [
-			"com.thepigcat76.ExampleModClient"
+			"com.thepigcat76.TechEnhancedClient"
 		],
 		"fabric-datagen": [
 			"com.thepigcat76.TechEnhancedDataGenerator"
