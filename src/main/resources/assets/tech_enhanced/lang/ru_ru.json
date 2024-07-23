@@ -1,0 +1,11 @@
+{
+  "item.tech_enhanced.electric_wrench": "Электрический ключ",
+  "item.tech_enhanced.electric_hoe": "Электрическая мотыга",
+  "item.tech_enhanced.nano_helmet": "Нано Шлем",
+  "item.tech_enhanced.nano_chestplate": "Нано Нагрудник",
+  "item.tech_enhanced.nano_leggings": "Нано Поножи",
+  "item.tech_enhanced.nano_boots": "Нано Ботинки",
+  "itemGroup.tech_enhanced.item_group": "Tech Enhanced",
+  "key.tech_enhanced.toggle_nv": "Включить ночное зрение",
+  "category.tech_enhanced.title": "Tech Enhanced"
+}
